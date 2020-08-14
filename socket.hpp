@@ -13,7 +13,9 @@ of the equivalent function. (ctor- socket, bind, listen, recv, recvfrom,
 send, sendto).
 the function setBlock makes the socket to perform in blocking/nonblocking
 mode, according to the input.
-This code will be work in c++ 11 and up.
+
+c++ versions: 11 and up
+Conforming to: POSIX.1-2001, POSIX.1-2008, 4.4BSD
 ************************************************************************/
 
 namespace morcohen
