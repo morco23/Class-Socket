@@ -5,9 +5,7 @@
 #include <memory>       //shared_ptr
 
 /***********************************************************************
-This class makes the working with socket in the style of object oriented.
-It is also support resource managment, so you can be confident the socket
-will be freed in the end of program.
+This is a resource managment socket class.
 To get information about of the function, you can read the man page
 of the equivalent function. (ctor- socket, bind, listen, recv, recvfrom,
 send, sendto).
