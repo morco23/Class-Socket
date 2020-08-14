@@ -6,7 +6,7 @@ using namespace morcohen;
 #define BUFFLEN 100
 
 /*  Run this program and right after that use the utility nc to simulate a client
-    this way-> nc localhost 12345 -> type hey from client and you will recieve
+    this way-> nc localhost 12345 -> type something from client and you will recieve
     Hello.
 */
 
