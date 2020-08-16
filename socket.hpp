@@ -5,8 +5,8 @@
 #include <memory>       //shared_ptr
 
 /***********************************************************************
-This is a resource managment socket class.
-To get information about of the function, you can read the man page
+This is a resource managment socket.
+To get information about the functions, you should read the man pages
 of the equivalent function. (ctor- socket, bind, listen, recv, recvfrom,
 send, sendto).
 the function setBlock makes the socket to perform in blocking/nonblocking
