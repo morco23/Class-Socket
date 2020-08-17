@@ -30,7 +30,7 @@ public:
     std::shared_ptr<Socket> Accept(sockaddr *address_, socklen_t *addressLen_);
     ssize_t Recieve(void *buf_, std::size_t len_, int flags_);
     ssize_t RecieveFrom(void *buf_, std::size_t len_, int flags_,
-                        struct sockaddr *srcAddr_, socklen_t *addrLen);
+                        struct sockaddr *srcAddr_, socklen_t *addrLen_);
     ssize_t Send(const void *buf_, size_t len_, int flags_); 
     ssize_t SendTo(const void *buf_, size_t len_, int flags_,
                       const struct sockaddr *destAdd_, socklen_t addrlen_);
