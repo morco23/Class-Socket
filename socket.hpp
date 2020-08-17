@@ -9,7 +9,7 @@ This is a resource managment socket.
 To get information about the functions, you should read the man pages
 of the equivalent function. (ctor- socket, bind, listen, recv, recvfrom,
 send, sendto).
-the function setBlock makes the socket to perform in blocking/nonblocking
+The function setBlock makes the socket to perform in blocking/nonblocking
 mode, according to the input.
 
 c++ versions: 11 and up
@@ -30,12 +30,12 @@ public:
     std::shared_ptr<Socket> Accept(sockaddr *address_, socklen_t *addressLen_);
     ssize_t Recieve(void *buf_, std::size_t len_, int flags);
     ssize_t RecieveFrom(void *buf_, std::size_t len_, int flags,
-                        struct sockaddr *srcAddr, socklen_t *addrLen);
-    ssize_t Send(const void *buf, size_t len, int flags); 
-    ssize_t SendTo(const void *buf, size_t len, int flags,
-                      const struct sockaddr *destAdd, socklen_t addrlen);
+                        struct sockaddr *srcAddr_, socklen_t *addrLen);
+    ssize_t Send(const void *buf_, size_t len_, int flags_); 
+    ssize_t SendTo(const void *buf_, size_t len_, int flags_,
+                      const struct sockaddr *destAdd_, socklen_t addrlen_);
     void Close();
-    void SetBlock(bool isBlock);
+    void SetBlock(bool isBlock_);
     int GetFd() const noexcept;
 private:
     Socket(const Socket&) = delete;
