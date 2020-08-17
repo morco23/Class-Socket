@@ -28,8 +28,8 @@ public:
     void Bind(sockaddr *addr_, socklen_t addrlen_);
     void Listen(int maxPending_);
     std::shared_ptr<Socket> Accept(sockaddr *address_, socklen_t *addressLen_);
-    ssize_t Recieve(void *buf_, std::size_t len_, int flags);
-    ssize_t RecieveFrom(void *buf_, std::size_t len_, int flags,
+    ssize_t Recieve(void *buf_, std::size_t len_, int flags_);
+    ssize_t RecieveFrom(void *buf_, std::size_t len_, int flags_,
                         struct sockaddr *srcAddr_, socklen_t *addrLen);
     ssize_t Send(const void *buf_, size_t len_, int flags_); 
     ssize_t SendTo(const void *buf_, size_t len_, int flags_,
