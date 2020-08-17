@@ -97,12 +97,12 @@ std::shared_ptr<Socket> Socket::Accept(sockaddr *address_, socklen_t *addressLen
     return std::shared_ptr<Socket>(new Socket(fd));
 }
 
-ssize_t Socket::Recieve(void *buf_, std::size_t len_, int flags)
+ssize_t Socket::Recieve(void *buf_, std::size_t len_, int flags_)
 {
     assert(buf_);
     assert(len_ > 0);
 
-    ssize_t byteWasRead = recv(m_fd, buf_, len_, flags);
+    ssize_t byteWasRead = recv(m_fd, buf_, len_, flags_);
     if (-1 == byteWasRead)
     {
         throw std::runtime_error(strerror(errno));
@@ -168,7 +168,7 @@ void Socket::Close()
     m_wasClosed = 1;
 }
 
-void Socket::SetBlock(bool isBlock)
+void Socket::SetBlock(bool isBlock_)
 {
     int flags = fcntl(m_fd, F_GETFL, 0);
     if (-1 == flags)
@@ -176,7 +176,7 @@ void Socket::SetBlock(bool isBlock)
         throw std::runtime_error(strerror(errno));
     }
 
-    flags = isBlock ? (flags | O_NONBLOCK) : (flags & ~O_NONBLOCK);
+    flags = isBlock_ ? (flags | O_NONBLOCK) : (flags & ~O_NONBLOCK);
 
     if (-1 == fcntl(m_fd, F_SETFL, flags))
     {
